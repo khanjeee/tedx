@@ -1169,7 +1169,7 @@ class grocery_CRUD_Model_Driver extends grocery_CRUD_Field_Types
 				}
 				else
 				{
-					$this->basic_model->limit(10);
+					$this->basic_model->limit(100);
 				}
 			}
 			else

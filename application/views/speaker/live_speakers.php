@@ -57,7 +57,7 @@
 		<!-- Side buttons Start -->
 			<div class="side-panel">
 				<a href="<?php echo site_url('speaker/profiles'); ?>" class="live-btn side-btn">Speakers</a>
-				<a href="<?php echo site_url('speaker/profiles/live'); ?>" class="live-btn side-btn">Live</a>				
+				<a href="<?php echo site_url('speaker/profiles/live'); ?>" class="live-btn active side-btn">Live</a>				
 			</div>
 
 		<!-- Side buttons End -->

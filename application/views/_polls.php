@@ -13,9 +13,9 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
          <link rel="stylesheet" href="<?php echo asset_css('normalize.css'); ?>">
         <link rel="stylesheet" href="<?php echo asset_css('main.css'); ?>">
-        <script src="<?php echo asset_js('jquery.min.js'); ?>"></script>
-       	<script src="<?php echo asset_js('highcharts.js'); ?>"></script>
-		<script src="<?php echo asset_js('exporting.js'); ?>"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+       <script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="http://code.highcharts.com/modules/exporting.js"></script>
        
         
         <script src="<?php echo asset_js('/vendor/modernizr-2.6.2.min.js'); ?>"></script>
@@ -25,64 +25,54 @@
         $(function () {
             $('#container').highcharts({
                 chart: {
-                    type: 'column',
-                    alignTicks: false
+                    type: 'column'
                 },
                 title: {
                     text: ''
                 },
-                colors: ['#ff0000'],
                 subtitle: {
-                    text: ''
+                    text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
                 },
                 xAxis: {
                     type: 'category',
                     labels: {
                         rotation: 0 ,
                         style: {
-                            fontSize: '10px',
+                            fontSize: '13px',
                             fontFamily: 'Verdana, sans-serif'
-                            
                         }
                     }
-                    
                 },
-                
-                	yAxis: [{
-                        title: {
-                            text: null
-                        },
-                        labels: {
-                            enabled: false
-                        },
-                        gridLineWidth: 0
-                    }, {
-                        title: {
-                            text: ''
-                        },
-                        opposite: true
-                    }],
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Population (millions)'
+                    }
+                },
                 legend: {
                     enabled: false
                 },
-                exporting: {
-                    enabled: false
-           },
                 tooltip: {
-                	enabled: false,
-                   // pointFormat: 'Population in 2008: <b>{point.y:.1f} millions</b>'
+                    pointFormat: 'Population in 2008: <b>{point.y:.1f} millions</b>'
                 },
                 series: [{
-                    name: '',
-                    data: <?php echo $aPolls; ?>,
+                    name: 'Population',
+                    data: [
+                        ['Shanghai', 23.7],
+                        ['Lagos', 16.1],
+                        ['Instanbul', 14.2],
+                        ['Karachi', 14.0],
+                        ['Lima', 8.9]
+                    ],
                     dataLabels: {
                         enabled: true,
-                        rotation: 0,
+                        rotation: -90,
                         color: '#FFFFFF',
-                        align: 'center',
-                        y: 28,
+                        align: 'right',
+                        x: 4,
+                        y: 10,
                         style: {
-                            fontSize: '10px',
+                            fontSize: '13px',
                             fontFamily: 'Verdana, sans-serif',
                             textShadow: '0 0 3px black'
                         }
@@ -103,9 +93,7 @@
 					<h2 class="name"><?php echo $aSpeakers[0]->name; ?></h2>
 					<span class="title"><?php echo $aSpeakers[0]->title; ?></span>
 				</div>
-				<a href="<?php echo site_url('speaker/profiles/view').'/'.$aSpeakers[0]->id; ?>">
-					<img class="person-pic" src="<?php echo site_url('assets/images/profilepic').'/'.$aSpeakers[0]->image; ?>" />
-				</a>
+				<img class="person-pic" src="<?php echo site_url('assets/images/profilepic').'/'.$aSpeakers[0]->image; ?>" />
 			</header>
 			
 			<div class="poll">
@@ -129,7 +117,7 @@
 		<!-- Side buttons Start -->
 			<div class="side-panel">
 				<a href="<?php echo site_url('speaker/profiles'); ?>" class="live-btn side-btn">Speakers</a>
-				<a onclick="javascript:check_if_polled();" href="#" class="live-btn side-btn">Live</a>				
+				<a href="<?php echo site_url('speaker/profiles/live'); ?>" class="live-btn side-btn">Live</a>				
 			</div>
 
 		<!-- Side buttons End -->
@@ -137,23 +125,5 @@
 		
         
     </body>
-    <script>
-   function  check_if_polled()
-   {
-	   var polled = "<?php echo $polled; ?>";
-	   if(polled.length > 0)
-	   {
-		   alert('You have already submitted your feedback');
-
-		}
-	   else
-		{
-		   window.location.assign("<?php echo site_url('speaker/profiles/live'); ?>"); 
-		}
-	   return  false;
-	   
-	}
-    
-    </script>
 </html>
     

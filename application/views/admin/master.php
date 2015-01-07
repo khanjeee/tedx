@@ -55,6 +55,7 @@
         <ul class="nav main">
             <li class="ic-dashboard"><a href="<?php echo site_url('admin/dashboard') ?>"><span>Dashboard</span></a> </li>
             <li class="ic-gallery"><a href="<?php echo site_url('admin/speakers/view') ?>"><span>Speakers</span></a></li>
+            <li class="ic-gallery"><a target="_blank" href="<?php echo site_url('polls/results') ?>"><span>Comments</span></a></li>
            
 		    </ul>
     </div>

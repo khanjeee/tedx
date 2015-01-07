@@ -50,11 +50,11 @@
 <li>Phone: 1.234.567.8901</li>
 <li>Toll-Free: 1.234.567.8901</li>
 <li>Fax: 1.234.567.8901</li>
-<li class="ft-email">Email: <a href="mailto:contact@kmdc.edu.pk">Send us an email</a></li>
+<li class="ft-email">Email: <a href="mailto:contact@tedx.com">Send us an email</a></li>
 <!--<li> -->
 <!--    <div class="social">Follow us <a target="blank" href="--><?php //echo $this->config->item('facebook_fanpage');?><!--"><img src="--><?php //echo asset_img("facebook.jpg");?><!--" alt="facebook" border="0" /></a> <a target="blank" href="--><?php //echo $this->config->item('twitter');?><!--"><img src="--><?php //echo asset_img("twitter.jpg");?><!--" alt="twitter" border="0" /></a></div>-->
 <!--</li>-->
-<li>KMDC Copyright � 2013.</li>
+<li>Tedx Copyright � 2015.</li>
 </ul>
 </div>
 </div>

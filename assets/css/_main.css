@@ -115,7 +115,7 @@ ul.profile {
 li.single-profile {
 	width: 22%;
 	display: inline-block;
-	padding: 0 0 20px 0;
+	padding: 0;
 	background: #fff;
 	border: 2px solid #d8d8d8;
 	margin: 9px 6px;
@@ -134,8 +134,8 @@ li.single-profile:hover a.Profile-box  {
 	color: #fff;
 }
 
-li.single-profile:hover a.Profile-box {
-	border: 5px solid #fff;
+li.single-profile:hover img.profile-pic {
+	border: 4px solid #fff;
 }
 
 
@@ -144,31 +144,28 @@ a.Profile-box {
 	text-transform: uppercase;
 	color: #fc3817;
 	display: block;
-	width: 168px;
-	height: 168px;
-	border-radius: 9999px;
-	margin: 20px auto;
-	border: 5px solid #fc3817;
 }
 
 img.profile-pic {
 	width: 170px;
 	height: 170px;
-	margin: -1px -1px 20px -1px;
+	border-radius: 9999px;
+	margin: 20px;
+	border: 4px solid #fc3817;
 }
 
 
 p.profile-name {
 	font-size: 20px;
 	font-weight: bold;
-	margin: 5px -20px;
+	margin: 5px 0;
 	padding: 0px 15px;
 }
 
 
 
 .side-panel {
-position: fixed;
+position: absolute;
 left: 0;
 top: 50%;
 z-index: 99999;
@@ -202,10 +199,6 @@ a.side-btn:hover {
 	color: #c91f31;
 }
 
-a.side-btn.active {
-	color: #c91f31;
-}
-
 
 
 /* Single Profile page */
@@ -216,20 +209,20 @@ header {
 	border-bottom: 3px solid #cfcfce;
 	
 	
-	background: #171717; /* Old browsers */
-	background: -moz-linear-gradient(top,  #171717 0%, #353535 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#171717), color-stop(100%,#353535)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #171717 0%,#353535 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #171717 0%,#353535 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #171717 0%,#353535 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #171717 0%,#353535 100%); /* W3C */
-
+	background: #d8d8d8; /* Old browsers */
+	background: -moz-linear-gradient(top,  #d8d8d8 0%, #ffffff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d8d8d8), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #d8d8d8 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #d8d8d8 0%,#ffffff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #d8d8d8 0%,#ffffff 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #d8d8d8 0%,#ffffff 100%); /* W3C */
+	
 	
 }
 
 h2.name {
 color: #fff;
-font-size: 1em;
+font-size: 0.85em;
 margin: 0px;
 }
 
@@ -241,18 +234,15 @@ img.person-pic {
 	margin: 10px;
 	border: 4px solid #ffffff;
 	position: absolute;
-	top: 5px;
+	top: 0px;
 	right: 0;
+
 }
 
 span.title {
 font-size: 12px;
 font-style: italic;
 color: #fc3817;
-}
-
-span.title p {
-margin: 0px 0 10px 0;
 }
 
 
@@ -267,8 +257,6 @@ margin: 0px 0 10px 0;
 	text-align: justify;
 	line-height: 1.5em;
 	font-size: 0.85em;
-	font-weight: bold;
-	color: #181818;
 }
 
 /* Single Profile page */
@@ -278,34 +266,29 @@ margin: 0px 0 10px 0;
 
 .poll {
 padding: 15px 20px;
-/* border-bottom: 3px solid #cecece; */
+border-bottom: 3px solid #cecece;
 }
 
 .poll p {
 font-size: 0.75em;
-color: #444;
+color: #000;
 font-weight: bold;
 text-align: center;
 }
 
 .poll-opt {
 width: 85%;
-margin: 40px auto;
-max-width: 500px;
+margin: 40px 28px;
 }
 
 .poll-opt span {
 width: 49%;
 margin: 2px 0px;
 display: inline-block;
-max-width: 220px;
-height: auto;
 }
 
 .poll-opt span img {
 width: 100%;
--webkit-filter: grayscale(1);
-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
 }
 
 .comment {
@@ -322,7 +305,6 @@ text-align: center;
 .comment textarea {
 margin: 0 4% 15px 4%;
 width: 90%;
-border-radius: 0px;
 }
 
 .comment input[type="submit"] {
@@ -335,103 +317,8 @@ color: #fff;
 font-size: 1.5em;
 font-weight: bold;
 box-shadow: 0px -2px 0px #000;
-border-radius: 0px;
 }
-
-
-
-.amcharts-chart-div text {
-/* display: none; */
-}
-
-.amcharts-chart-div path {
-stroke: rgba(0,0,0,0.0);
-fill: rgb(252,56,23)
-}
-
-.amcharts-chart-div > a {
-display: none!important;
-}
-
-.poll-opt span.active img {
-filter: none;
--webkit-filter: none;
-}
-
-
-
-.highcharts-container {
-margin-left: -5px;
-}
-
 /* Poll page End */
-
-/* Result page Start */
-
-header.result-page {
-	padding: 30px;
-	border-bottom: 8px solid #111;
-}
-
-.result-page .person-detail {
-	max-width: 1200px;
-	position: relative;
-	margin: 0 auto;
-}
-
-.result-page .person-detail  h2.name {
-	color: #fff;
-	font-size: 2.5em;
-	margin: 0px;
-}
-
-.result-page .person-detail  span.title {
-	font-size: 2em;
-	font-style: italic;
-	color: #fc3817;
-}
-
-.result-page .person-detail  img.person-pic {
-	width: 170px;
-	height: 170px;
-	border-radius: 9999px;
-	margin: 10px;
-	border: 7px solid #ffffff;
-	position: absolute;
-	top: -10px;
-	right: 0;
-	background: #fff;
-}
-
-.result-container {
-	min-width: 980px;
-	margin-top: 30px;
-}
-
-.result-container .poll {
-width: 45%;
-margin: 0 2% 0 2%;
-overflow: hidden;
-display: inline-block;
-border-right: 4px dotted #333;
-}
-
-
-.result-container .comments-roll {
-width: 45%;
-margin: 0 0 0 2%;
-overflow: hidden;
-display: inline-block;
-}
-
-
-
-
-
-/* Result page End */
-
-
-
 
 
 
@@ -470,14 +357,10 @@ margin: 5px 2px;
 }
 
 
-a.Profile-box {
-	width: 98px;
-	height: 98px;
-	}
-
 img.profile-pic {
 width: 100px;
 height: 100px;
+margin: 10px;
 }
 
 

@@ -56,8 +56,8 @@
 		
 		<!-- Side buttons Start -->
 			<div class="side-panel">
-				<a href="<?php echo site_url('speaker/profiles'); ?>" class="live-btn side-btn">Speakers</a>
-				<a href="<?php echo site_url('speaker/profiles/live'); ?>" class="live-btn side-btn">Live</a>				
+				<a href="<?php echo site_url('speaker/profiles'); ?>" class="live-btn side-btn active">Speakers</a>
+				<a onclick="javascript:check_if_polled();" href="#" class="live-btn side-btn">Live</a>				
 			</div>
 
 		<!-- Side buttons End -->
@@ -79,4 +79,22 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
     </body>
+    <script>
+   function  check_if_polled()
+   {
+	   var polled = "<?php echo $polled; ?>";
+	   if(polled.length > 0)
+	   {
+		   alert('You have already submitted your feedback');
+
+		}
+	   else
+		{
+		   window.location.assign("<?php echo site_url('speaker/profiles/live'); ?>"); 
+		}
+	   return  false;
+	   
+	}
+    
+    </script>
 </html>

@@ -67,6 +67,11 @@ class Speakers extends CI_Controller {
 			$crud->set_subject('Speaker Profiles');
 			$crud->required_fields('name','title','description','gender','is_live','poll_is_active');
 			
+			$crud->unset_edit();
+			$crud->unset_delete();
+			$crud->unset_export();
+			$crud->unset_print();
+			
 			
 			$crud->columns('name','title','description','gender','is_live','poll_is_active');
 			

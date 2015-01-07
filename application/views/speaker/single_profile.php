@@ -26,13 +26,11 @@
 					<h2 class="name"><?php echo $aSpeakers[0]->name; ?></h2>
 					<span class="title"><?php echo $aSpeakers[0]->title; ?></span>
 				</div>
+			<a href="<?php echo site_url('speaker/profiles/view').'/'.$aSpeakers[0]->id; ?>">	
 				<img class="person-pic" src="<?php echo site_url('assets/images/profilepic').'/'.$aSpeakers[0]->image; ?>" />
+			</a>	
 			</header>
-			<?php if($aSpeakers[0]->poll_is_active == 'yes'): ?>
-			<a href="<?php echo site_url('speaker/profiles/poll').'/'.$aSpeakers[0]->id; ?>" class="live-btn side-btn">Poll</a>
-					
-			<?php endif; ?>
-			<a href="<?php echo site_url('polls/view').'/'.$aSpeakers[0]->id; ?>" class="live-btn side-btn">View Poll</a>
+			
 			
 			<div class="person-description">
 				<p><?php echo $aSpeakers[0]->description; ?></p>
@@ -45,8 +43,8 @@
 		<!-- Side buttons Start -->
 			<div class="side-panel">
 				<a href="<?php echo site_url('speaker/profiles'); ?>" class="live-btn side-btn">Speakers</a>
-				<a href="<?php echo site_url('speaker/profiles/live'); ?>" class="live-btn side-btn">Live</a>
-								
+				<a onclick="javascript:check_if_polled();" href="#" class="live-btn side-btn">Live</a>				
+												
 			</div>
 
 		<!-- Side buttons End -->
@@ -68,4 +66,22 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
     </body>
+    <script>
+   function  check_if_polled()
+   {
+	   var polled = "<?php echo $polled; ?>";
+	   if(polled.length > 0)
+	   {
+		   alert('You have already submitted your feedback');
+
+		}
+	   else
+		{
+		   window.location.assign("<?php echo site_url('speaker/profiles/live'); ?>"); 
+		}
+	   return  false;
+	   
+	}
+    
+    </script>
 </html>

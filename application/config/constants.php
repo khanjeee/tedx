@@ -40,6 +40,8 @@ define('UPLOAD_LECTURES_AUDIO',		'assets/uploads/lectures/audio');
 define('UPLOAD_ASSIGNMENT_FILE',		'assets/uploads/assignments/file');
 define('UPLOAD_ASSIGNMENT_AUDIO',		'assets/uploads/assignments/audio');
 
+define('REFRESH_INTERVAL',5);
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
